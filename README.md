@@ -15,12 +15,13 @@ __Five fun facts about me:__
 
 I recently completed my *CFG Kickstarter* in *Data and SQL*, it was really interesting and I was able to make a
 database about my favourite characters from **Sanrio**. 
-You can get an idea of the database by looking at my ![EER Diagram](img_4.png)
+You can get an idea of the database by looking at my EER Diagram: ![img_8.png](img_8.png)
 
 You can find more information about my favourite Sanrio character [Pompompurin](https://sanrio.fandom.com/wiki/Pompompurin).
 > It's easy to fall in love with Pompompurin so follow the link at your own caution!
 
-![Here is my and my friend at Sanrio Puroland.](img_5.png)
+Here's a photo of me and my friend at Sanrio Puroland!
+![img_7.png](img_7.png)
 
 I think that's enough about me!
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -49,9 +50,9 @@ I think that's enough about me!
 
 ## Please find relevant screenshots for this assignment here:
 
-* ![Checking the status](img_2.png)
-* ![My branch test1](img_1.png)
-* ![You can see my meaningful message on the commit.](img_3.png)
+* Checking the status![img_6.png](img_6.png)
+* My branch![My branch test1](img_1.png)
+* You can see my meaningful message on the commit.![You can see my meaningful message on the commit.](img_3.png)
 
 *What is gitignore for?*
 The .gitigore file is used to specify which files Git should 
