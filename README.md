@@ -53,6 +53,8 @@ I think that's enough about me!
 * Checking the status![img_6.png](img_6.png)
 * My branch![My branch test1](img_1.png)
 * You can see my meaningful message on the commit.![You can see my meaningful message on the commit.](img_3.png)
+* I successfully completed a pull request and merged: ![img_9.png](img_9.png)
+* I deployed the main branch on my local repo, by fetching and updating: ![img_10.png](img_10.png)
 
 *What is gitignore for?*
 The .gitigore file is used to specify which files Git should 
