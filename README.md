@@ -52,3 +52,17 @@ I think that's enough about me!
 * ![Checking the status](img_2.png)
 * ![My branch test1](img_1.png)
 * ![You can see my meaningful message on the commit.](img_3.png)
+
+*What is gitignore for?*
+The .gitigore file is used to specify which files Git should 
+ignore in version control. Thus, git will not track any changes made
+to these files and they won't be included in commits.
+This makes collaboration easier by being able to ignore information
+that may be sensitive or unnecessary.
+
+*What is requirements.txt for?*
+The requirements.txt file contains a list of the Python packages and versions 
+used for a project. This is helpful for when others want to install the same
+dependencies (external libraries or packages your project requires to function)
+by running a single command which is: 
+>`pip install -r requirements.txt`
