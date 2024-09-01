@@ -15,12 +15,12 @@ __Five fun facts about me:__
 
 I recently completed my *CFG Kickstarter* in *Data and SQL*, it was really interesting and I was able to make a
 database about my favourite characters from **Sanrio**. 
-You can get an idea of the database by looking at my ![EER Diagram](../../Screenshot%202024-08-13%20at%2016.58.04.png)
+You can get an idea of the database by looking at my ![EER Diagram](img_4.png)
 
 You can find more information about my favourite Sanrio character [Pompompurin](https://sanrio.fandom.com/wiki/Pompompurin).
 > It's easy to fall in love with Pompompurin so follow the link at your own caution!
 
-![Here is an image of me and my friend at Sanrio Puroland.](../../Film/Japan%20filn/CNV00017.JPG)
+![Here is my and my friend at Sanrio Puroland.](img_5.png)
 
 I think that's enough about me!
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -52,4 +52,3 @@ I think that's enough about me!
 * ![Checking the status](img_2.png)
 * ![My branch test1](img_1.png)
 * ![You can see my meaningful message on the commit.](img_3.png)
-* 
