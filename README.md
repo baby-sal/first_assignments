@@ -21,7 +21,7 @@ You can find more information about my favourite Sanrio character [Pompompurin](
 > It's easy to fall in love with Pompompurin so follow the link at your own caution!
 
 Here's a photo of me and my friend at Sanrio Puroland!
-![img_7.png](sanrioland.png)
+![img_7.png](Images/sanrioland.png)
 
 I think that's enough about me!
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
