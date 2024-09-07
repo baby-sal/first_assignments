@@ -38,6 +38,8 @@ def nickname(suffix):
         suffix = "-kun"
     elif user_gender == "Female" or user_gender == "female":
         suffix = "-chan"
+    else:
+        suffix = "-san"
 
     full_name = (user["name"] + suffix)
 
@@ -55,3 +57,7 @@ user_eye_colour = input("I can't help getting lost in your eyes, " + user_name +
 
 print(f"What a magical aura you have, " + user_name + ",thank you for sharing!\n Let's find your doppelganger!")
 
+import requests
+
+response = requests.get("https://ghibliapi.vercel.app")
+print(response.status_code)
