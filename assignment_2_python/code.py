@@ -17,26 +17,40 @@ user = {
 }
 
 # Ask for the user to input their name:
-user["name"] = input("Hello friend, what is your name?")
+
+def read_out_my_name(name):
+    for letter in name:
+        print(letter)
+
+user["name"] = input("Hello friend, how do I spell your name?")
+
+read_out_my_name(user["name"])
 
 # Explain the program to the user:
 print(f'''\n{user["name"]}, it's nice to meet you! \nIf you can kindly share some details with me, I'd like to find your Ghibli doppelganger and recommend you a movie. \nIf that sounds ok, let's get spirited away!''')
 
 # Ask for the user's inputs
-
+# Name, creating a themed nickname
 user_gender = input("What is your gender?")
 
-if user_gender == "Male":
-    suffix_1 = "-kun"
-elif user_gender == "Female":
-    suffix_2 = "-chan"
+def nickname(suffix):
+    if user_gender == "Male" or user_gender == "male":
+        suffix = "-kun"
+    elif user_gender == "Female" or user_gender == "female":
+        suffix = "-chan"
 
-full_name = (user["name"] + suffix)
+    full_name = (user["name"] + suffix)
 
-print(f"OK! We shall call you " + full_name+"!")
+    print(f"OK! We shall call you " + full_name+"!")
+    return full_name
+# Collecting hair colour and eye colour
 
-user_hair_colour = input(full_name+", What is your hair colour?")
+user_name = nickname("")
 
-print(f"I'm finding so much out about you, now, one last question!")
+user_hair_colour = input(user_name+", what is your hair colour?")
 
-user_eye_colour = input("I'm getting lost in your eyes, " +full_name+", but what is their colour?")
+print(f"I'm finding so much out about you! One more thing...")
+
+user_eye_colour = input("I can't help getting lost in your eyes, " + user_name +", but what is their colour?")
+
+print(f"What a magical aura you have, " + user_name + ",thank you for sharing!\n Let's find your doppelganger!")
