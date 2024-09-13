@@ -7,6 +7,8 @@
 # Send the inputs to the API to return the characters that you have similar features
 # If there are more than 3 characters give the option to choose a species you feel relates to you from the options
 # Display the characters details and what films they appear in (title, original title, release year, description, rotten tomato score(put highest ranking on top?))
+import requests
+import json
 
 # User dictionary:
 user = {
@@ -49,15 +51,30 @@ def nickname(suffix):
 
 user_name = nickname("")
 
-user_hair_colour = input(user_name+", what is your hair colour?")
+ghibli_hair = input("What is your hair colour?  ").capitalize()
+
+endpoint = f"https://ghibliapi.vercel.app/people?hair_color={ghibli_hair}"
+response = requests.get(endpoint)
+data = response.json()
+
+# print the names
+ghibli_name = [person["name"] for person in data]
+if ghibli_name:
+    print(", ".join(ghibli_name) + " has the same hair colour as you!")
+else:
+    print("Sorry no match, try again?")
 
 print(f"I'm finding so much out about you! One more thing...")
 
-user_eye_colour = input("I can't help getting lost in your eyes, " + user_name +", but what is their colour?")
+ghibli_eyes = input("I can't help getting lost in your eyes, " + user_name +", but what is their colour?").capitalize()
 
-print(f"What a magical aura you have, " + user_name + ",thank you for sharing!\n Let's find your doppelganger!")
+endpoint_2 = f"https://ghibliapi.vercel.app/people"
+response_2 = requests.get(endpoint_2)
+data_2 = response_2.json()
 
-import requests
-
-response = requests.get("https://ghibliapi.vercel.app")
-print(response.status_code)
+# print the names
+ghibli_name_2 = [person["name"] for person in data_2 if person["eye_color"].capitalize() == ghibli_eyes]
+if ghibli_name_2:
+    print(", ".join(ghibli_name_2) + " has the same eye colour as you!")
+else:
+    print("Sorry no match, try again?")
