@@ -1,5 +1,5 @@
 # Attempt 1
-# import requests
+import requests
 # print(requests)
 import json
 
@@ -102,20 +102,20 @@ import json
 
 # Attempt 3
 
-import requests
-
-ghibli_hair = input("What is your hair colour?  ").capitalize()
-
-endpoint = f"https://ghibliapi.vercel.app/people?hair_color={ghibli_hair}"
-response = requests.get(endpoint)
-data = response.json()
-
-# print the names
-ghibli_name = [person["name"] for person in data]
-if ghibli_name:
-    print(", ".join(ghibli_name) + " has the same hair colour as you!")
-else:
-    print("Sorry no match, try again?")
+# import requests
+#
+# ghibli_hair = input("What is your hair colour?  ").capitalize()
+#
+# endpoint = f"https://ghibliapi.vercel.app/people?hair_color={ghibli_hair}"
+# response = requests.get(endpoint)
+# data = response.json()
+#
+# # print the names
+# ghibli_name = [person["name"] for person in data]
+# if ghibli_name:
+#     print(", ".join(ghibli_name) + " has the same hair colour as you!")
+# else:
+#     print("Sorry no match, try again?")
 
 # Dictionary attempt:
 # form a dictionary for hair colour
@@ -148,3 +148,32 @@ else:
 #         print(cha_hair_color["name"])
 #     elif ghibli_hair != hair_color:
 #         print("Would you like to try again?")
+#
+# ghibli_hair = input("What is your hair colour?  ").capitalize()
+#
+# endpoint = f"https://ghibliapi.vercel.app/people?hair_color={ghibli_hair}"
+# response = requests.get(endpoint)
+# data = response.json()
+#
+# # print the names
+# ghibli_name = [person["name"] for person in data]
+# if ghibli_name:
+#     print(", ".join(ghibli_name) + " has the same hair colour as you!")
+# else:
+#     print("Sorry no match, try again?")
+
+while True:
+    try:
+        age = int(input("Please enter your age: "))
+    except ValueError:
+        print("Sorry, I didn't understand that.")
+        #better try again... Return to the start of the loop
+        continue
+    else:
+        #age was successfully parsed!
+        #we're ready to exit the loop.
+        break
+if age >= 18:
+    print("You are able to vote in the United States!")
+else:
+    print("You are not able to vote in the United States.")
