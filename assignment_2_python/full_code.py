@@ -88,6 +88,9 @@ doppelganger_name = [name for name in ghibli_name if name in ghibli_name_2]
 
 if doppelganger_name:
     print("Your Ghibli doppelganger is: " + ", ".join(doppelganger_name))
+    file = open("/Users/sallydavies/Desktop/CFG Degree/CFG-Assignments/assignment_2_python/doppelgangers", "a+")
+    file.write(f"\n {user_name} looks like {doppelganger_name}")
+    file.close()
 else:
     print("Sorry no match...")
 
