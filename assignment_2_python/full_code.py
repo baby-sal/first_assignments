@@ -1,20 +1,3 @@
-# **Studio Ghibli Character Generator and Movie Recommendation**
-
-# Welcome. This app asks the user questions about their hair and eye color
-# and finds a character in the Ghibli universe who looks like them.
-# After the doppelganger is (or isn't...) revealed, the user can input a character
-# name that they want to know about, with respect to the film they are in.
-#
-# I used the Ghibli API to access information about the characters and the films.
-# The app sends a request to the API to form responses in the form of lists with the characters who match the user's hair colour and eye colour.
-# Secondly, the app will respond the URL relating to the character and loop through the list of films on the film endpoint
-# If there is a match found, then the app will print the film's details.
-# There is no set up required for the API
-
-# I imported the time function to make the user have to wait for the result, increasing their suspense.
-
-# Enjoy!
-
 import requests
 import json
 import time
@@ -28,9 +11,9 @@ user = {
 }
 
 # Ask for the user to input their name:
-
 def read_out_my_name(name):
     for letter in name:
+        # inbuilt print function (#1)
         print(letter)
 
 user["name"] = input("Hello friend, how do I spell your name?")
@@ -44,6 +27,7 @@ print(f"{user["name"]}, it's nice to meet you! \n\nIf you can kindly share some 
 # Creating a themed nickname:
 user_gender = input("\nWhat is your gender?")
 
+# if else usage
 def nickname(suffix):
     if user_gender == "Male" or user_gender == "male":
         suffix = "-kun"
@@ -53,7 +37,7 @@ def nickname(suffix):
         suffix = "-san"
 
     full_name = (user["name"] + suffix)
-
+    # usage of return
     print(f"\nOK! We shall call you " + full_name+"!")
     return full_name
 
@@ -63,6 +47,7 @@ user_name = nickname("")
 # Collecting hair colour and eye colour
 ghibli_hair = input("\nWhat is your hair colour? ").capitalize()
 
+#Usage of API
 endpoint_hair = f"https://ghibliapi.vercel.app/people?hair_color={ghibli_hair}"
 response_hair = requests.get(endpoint_hair)
 data_hair = response_hair.json()
@@ -101,6 +86,7 @@ doppelganger_name = [name for name in hair_name if name in eyes_name]
 if doppelganger_name:
     print("\nYour Ghibli doppelganger is: " + ", ".join(doppelganger_name))
     file = open("/Users/sallydavies/Desktop/CFG Degree/CFG-Assignments/assignment_2_python/doppelgangers", "a+")
+    # writing results to a separate file (doppelgangers.txt)
     file.write(f"\n {user_name} looks like {doppelganger_name}")
     file.close()
 else:
@@ -120,16 +106,20 @@ url_name = [person["films"] for person in data_eyes if person["name"].capitalize
 urls_all = [url for sublist in url_name for url in sublist]
 
 # If the person and film URLs match, the films information will be requested from the films endpoint
+# for loop usage
 if url_name:
     print(interest_cha + f" is in the following film:\n")
 for film in data_films:
         if film["url"] in urls_all:
             print(f"{film["title"]}, \n Which was produced by the world-famous {film["director"]}.")
+            #str inbuilt function (#2)
             release_year = str(film["release_date"])
+            # string slicing
             print(f"It was released in '" + release_year[2:4])
             print(f"Here is a quick description: \n {film["description"]}")
             print(f"This film garnered a Rotten Tomatoes score of {film["rt_score"]} /100, why don't you check it out?!")
             file = open("/film_recommendations.txt", "a+")
+            #writing results to a separate file (film_recommendations.txt)
             file.write(f"{film["title"]}")
             file.close()
 else:
@@ -137,9 +127,3 @@ else:
 
 print("I hope you enjoyed the Ghibli quiz! ありがとうございました")
 print("	♡＼(￣▽￣)／♡")
-
-
-# How I'd like to improve:
-# Recursion - if there is no match then being able to repeat that input again
-# Be able to connect related colours of hair and eyes, so that there are more matches (some of the colour names are too specific)
-# Make a response that is relevant to the Rotten Tomatoes score, e.g if bad, ask to suggest another.
