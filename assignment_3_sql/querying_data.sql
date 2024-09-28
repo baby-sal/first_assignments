@@ -66,6 +66,7 @@ WHERE Dish_name = "Gyoza"
 ORDER BY days_since_gyoza_reviewed DESC;
 
 -- 6. Find the total number of reviews and money spent in 2024
+
 SELECT CONCAT(u.First_Name, " ", u.Last_Name) AS full_name, COUNT(rv.Review_ID) AS total_reviews, SUM(d.price) as total_spent_JPY
 FROM Users u
 JOIN Reviews rv
@@ -77,6 +78,7 @@ GROUP BY u.User_ID
 ORDER BY total_reviews DESC;
 
 -- 7. Showing how to insert and delete a row after a table has been created.
+
 INSERT INTO Restaurants (Restaurant_ID, Name, City, Speciality, Price_Range, Rating)
 VALUES
 (11, "Yakuniku Like", "Chiba", "Yakiniku", "$", 4);
