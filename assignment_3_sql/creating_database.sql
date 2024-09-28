@@ -126,3 +126,10 @@ VALUES
 (2, "Suzuka", "Murasato", 45, "Japan"),
 (3, "Melissa", "Jay", 22, "Canada");
 
+USE jp_food_tour;
+
+-- Adding extra foreign keys
+
+ALTER TABLE Reviews
+ADD FOREIGN KEY (User_ID) REFERENCES Users(User_ID);
+
