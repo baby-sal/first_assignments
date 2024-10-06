@@ -15,13 +15,13 @@ __Five fun facts about me:__
 
 I recently completed my *CFG Kickstarter* in *Data and SQL*, it was really interesting and I was able to make a
 database about my favourite characters from **Sanrio**. 
-You can get an idea of the database by looking at my EER Diagram: ![img_8.png](assignment_1/Images/eer_diagram.png)
+You can get an idea of the database by looking at my EER Diagram: ![img_8.png](Images/eer_diagram.png)
 
 You can find more information about my favourite Sanrio character [Pompompurin](https://sanrio.fandom.com/wiki/Pompompurin).
 > It's easy to fall in love with Pompompurin so follow the link at your own caution!
 
 Here's a photo of me and my friend at Sanrio Puroland!
-![img_7.png](assignment_1/Images/sanrioland.png)
+![img_7.png](Images/sanrioland.png)
 
 I think that's enough about me!
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -50,11 +50,11 @@ I think that's enough about me!
 
 ## Please find relevant screenshots for this assignment here:
 
-* Checking the status![img_6.png](assignment_1/Images/check_status.png)
-* My branch![My branch test1](assignment_1/Images/branch.png)
-* You can see my meaningful message on the commit.![You can see my meaningful message on the commit.](assignment_1/Images/comment.png)
-* I successfully completed a pull request and merged: ![img_9.png](assignment_1/Images/pullrequest.png)
-* I deployed the main branch on my local repo, by fetching and updating: ![img_10.png](assignment_1/Images/deploy.png)
+* Checking the status![img_6.png](Images/check_status.png)
+* My branch![My branch test1](Images/branch.png)
+* You can see my meaningful message on the commit.![You can see my meaningful message on the commit.](Images/comment.png)
+* I successfully completed a pull request and merged: ![img_9.png](Images/pullrequest.png)
+* I deployed the main branch on my local repo, by fetching and updating: ![img_10.png](Images/deploy.png)
 
 *What is gitignore for?*
 The .gitigore file is used to specify which files Git should 
