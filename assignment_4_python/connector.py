@@ -12,22 +12,18 @@ def establish_cnx(database):
     )
     return db_cnx
 
+def get_all_food():
+    cursor = db_cnx.cursor()
+    query = ("SELECT * FROM food" )
+    cursor.execute(query)
+    result = cursor.fetchall()
 
+##print all the names:
+    for food in result:
+        print(food[1])
 
-# cursor = db_cnx.cursor()
-#
-# query = ("SELECT * FROM food" )
-#
-# cursor.execute(query)
-#
-# result = cursor.fetchall()
-#
-# ##print all the names:
-# for food in result:
-#     print(food[1])
-#
-# print("Closing database connection...")
-# db_cnx.close()
+print("Closing database connection...")
+db_cnx.close()
 
 
 

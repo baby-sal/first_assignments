@@ -15,3 +15,7 @@ def add_review():
     endpoint_2 = "http://127.0.0.1:5000/review/"
     data = requests.get(endpoint_2).json()
     return data
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
