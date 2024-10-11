@@ -6,6 +6,7 @@
 
 import mysql.connector
 from requests import delete
+import datetime
 
 from config import HOST, USER, PASSWORD, DATABASE
 
@@ -52,6 +53,31 @@ def get_all_food():
 if __name__ == '__main__':
     print("Testing DB Connection")
     print(get_all_food())
+
+def get_all_reviews():
+    try:
+        database_cnx = establish_cnx()
+        cursor = database_cnx.cursor()
+        print("Connected to the database...")
+
+        query = """SELECT * FROM reviews"""
+        cursor.execute(query)
+        result = cursor.fetchall()
+
+        for i in result:
+            print(i) ##Prints the results
+            # print(i[1]) ##Prints the names of the food
+
+        cursor.close()
+
+    except Exception:
+        raise DbconnectionError("Unable to read data from database")
+
+    finally:
+        if database_cnx:
+            database_cnx.close()
+            print("Connection to the database has closed.")
+
 
 
 def delete_review_by_id(id):
@@ -113,10 +139,9 @@ def add_review(record):
             print("Connection to the database has closed.")
 
 def main():
-    add_review(record)
+    add_review()
 
 if __name__ == '__main__':
     print("Testing DB Connection")
     # print(get_all_food())
-    print(get_all_regions())
-    print(delete_review_by_id())
+    print(get_all_reviews())
