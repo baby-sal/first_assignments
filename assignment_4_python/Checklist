@@ -1,13 +1,14 @@
 You should:
-+ Implement 2 API endpoints with appropriate functionality
-+ Implement one additional endpoint of your choice can be POST or GET
-+ Implement client-side for each of the 3 API endpoints you have created.
-+ Have db_utils file and use exception handling
++ Implement 2 API endpoints with appropriate functionality Implement one additional endpoint of your choice can be POST or GET (APP)
++ Implement client-side for each of the 3 API endpoints you have created. (MAIN)
++ Have db_utils file and use exception handling (db_utils)
 + Use appropriate SQL queries to interact with the database in your Flask application, and
-demonstrate at least two different queries.
+demonstrate at least two different queries (dbutils)
 + In main.py have a run() function/call the functions to simulate the planned interaction
 with the API, this could include welcome statements, displaying etc., (hairdressers
-booking example from lesson)
+booking example from lesson) (MAIN)
+
+
 + Have correct but minimal imports per file (do not import things you do not use in the
 file)
 + Document how to run your API in a markdown file including editing the config file, any
