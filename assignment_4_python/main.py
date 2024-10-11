@@ -29,7 +29,7 @@ def delete_review_using_id(id):
     delete_result = requests.delete(endpoint).json()
     return delete_result.json()
 
-def add_review(food_id,review_date,review)
+def add_review(food_id,review_date,review):
 
     review = {
         "food_id" : food_id,
