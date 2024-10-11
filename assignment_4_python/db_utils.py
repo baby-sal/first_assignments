@@ -53,31 +53,6 @@ if __name__ == '__main__':
     print("Testing DB Connection")
     print(get_all_food())
 
-######################## work on the next one here
-def get_all_regions():
-    try:
-        database_cnx = establish_cnx()
-        cursor = database_cnx.cursor()
-        print("Connected to the database...")
-
-        query = """SELECT * FROM region"""
-        cursor.execute(query)
-        result = cursor.fetchall()
-
-        for i in result:
-            print(i) ##Prints the results
-            # print(i[1]) ##Prints the names of the food
-
-        cursor.close()
-
-    except Exception:
-        raise DbconnectionError("Unable to read data from database")
-
-    finally:
-        if database_cnx:
-            database_cnx.close()
-            print("Connection to the database has closed.")
-
 
 def delete_review_by_id(id):
     try:
