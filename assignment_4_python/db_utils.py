@@ -1,9 +1,3 @@
-#maybe import requests
-# + Have db_utils file and use exception handling (db_utils)
-# + Use appropriate SQL queries to interact with the database in your Flask application, and
-# demonstrate at least two different queries (dbutils)
-
-
 import mysql.connector
 from requests import delete
 import datetime
@@ -23,8 +17,6 @@ def establish_cnx():
     )
     return db_cnx
 
-
-
 def get_all_food():
     try:
         database_cnx = establish_cnx()
@@ -35,11 +27,12 @@ def get_all_food():
         cursor.execute(query)
         result = cursor.fetchall()
 
-        for i in result:
-            print(i) ##Prints the results
+        # for i in result:
+        #     print(i) ##Prints the results
             # print(i[1]) ##Prints the names of the food
 
         cursor.close()
+        return result
 
     except Exception:
         raise DbconnectionError("Unable to read data from database")
@@ -48,11 +41,6 @@ def get_all_food():
         if database_cnx:
             database_cnx.close()
             print("Connection to the database has closed.")
-
-
-if __name__ == '__main__':
-    print("Testing DB Connection")
-    print(get_all_food())
 
 def get_all_reviews():
     try:
@@ -66,9 +54,11 @@ def get_all_reviews():
 
         for i in result:
             print(i) ##Prints the results
-            # print(i[1]) ##Prints the names of the food
+            # print(i[1]) ##Prints all the reviews
 
         cursor.close()
+
+        return result
 
     except Exception:
         raise DbconnectionError("Unable to read data from database")
@@ -78,25 +68,23 @@ def get_all_reviews():
             database_cnx.close()
             print("Connection to the database has closed.")
 
-
-
-def delete_review_by_id(id):
+def delete_review_by_id_db(id):
     try:
         database_cnx = establish_cnx()
         cursor = database_cnx.cursor()
         print("Connected to the database...")
 
-        deleter_query = """DELETE FROM reviews WHERE review_id = {}""".format(id)
+        deleter_query = "DELETE FROM reviews WHERE review_id = {}".format(id)
         cursor.execute(deleter_query)
 
-        database_cnx.commit()  # Commit the transaction to apply the deletion
+        database_cnx.commit()
 
-        # you can leave little messages for yourself and debugging like this
         print(f"Review with id: {id} deleted.")
 
         view_remaining_query = "SELECT * FROM reviews"
         cursor.execute(view_remaining_query)
-        new_records = cursor.fetchall()  # Get all remaining records
+        new_records = cursor.fetchall()
+        cursor.close()
 
         return new_records
 
@@ -108,40 +96,8 @@ def delete_review_by_id(id):
             database_cnx.close()
             print("Connection to the database has closed.")
 
-
-
-## Add review
-def add_review(record):
-    record = None
-    try:
-        database_cnx = establish_cnx()
-        cursor = database_cnx.cursor()
-        print("Connected to the database...")
-
-        inserter_query = """INSERT INTO reviews ({}) VALUES ("{}", "{}", "{}", "{}", {}, {}, {})""".format(
-            ", ".join(record.keys()),
-            record["food_id"],
-            record["review_date"],
-            record["review"],
-        )
-        cursor.execute(inserter_query)
-
-        database_cnx.commit()  # VERY IMPORTANT, otherwise, rows would not be added or reflected in the DB!
-        cursor.close()
-
-
-    except Exception:
-        raise DbConnectionError("Unable to read data from database")
-
-    finally:
-        if database_cnx:
-            database_cnx.close()
-            print("Connection to the database has closed.")
-
-def main():
-    add_review()
-
 if __name__ == '__main__':
-    print("Testing DB Connection")
-    # print(get_all_food())
-    print(get_all_reviews())
+#     # print("Testing DB Connection")
+#     # print(get_all_food())
+#     # print(get_all_reviews())
+        delete_review_by_id_db()
