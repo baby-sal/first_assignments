@@ -1,5 +1,5 @@
 DB_UTILS:
-pip install mysql-connector-python
+run in the Terminal: pip install mysql-connector-python
 import mysql.connector
 from requests import delete
 import datetime
@@ -7,9 +7,8 @@ import datetime
 APP:
 from flask import Flask, jsonify, request
 from requests import delete
-from db_utils import get_all_food, get_all_reviews, delete_review_by_id
 
 MAIN:
 import requests
 import json
-import time
+from time import sleep
