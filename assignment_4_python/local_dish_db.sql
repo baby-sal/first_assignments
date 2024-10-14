@@ -67,8 +67,10 @@ VALUES
 
 SELECT * FROM food;
 
+DROP TABLE reviews;
+
 CREATE TABLE reviews (
-user_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+review_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 food_id INT, 
 review_date DATE,
 review VARCHAR(255),
@@ -77,6 +79,9 @@ FOREIGN KEY (food_id) REFERENCES food(food_id)
 
 INSERT INTO reviews (food_id, review_date, review)
 VALUES
-(1, "2023-10-04", "VERY yummy!");
+(1, "2023-10-04", "VERY yummy!"),
+(2, "2024-10-13", "I love it here!"),
+(3, "2022-11-12", "Will be coming back!"),
+(4, "2023-06-05", "What a surprising delicacy");
 
 SELECT * FROM reviews;
