@@ -1,0 +1,14 @@
+DB_UTILS:
+run in the Terminal: pip install mysql-connector-python
+import mysql.connector
+from requests import delete
+import datetime
+
+APP:
+from flask import Flask, jsonify, request
+from requests import delete
+
+MAIN:
+import requests
+import json
+from time import sleep
